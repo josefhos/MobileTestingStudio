@@ -21,6 +21,8 @@ namespace MobileTestingStudio
             mobileManager.DeleteMobile(mobile.Id);
 
             ShowInConsole(mobileManager.LoadAllMobiles());
+
+            //test
         }
 
         private static void ShowInConsole(IEnumerable<IMobile> mobiles)
