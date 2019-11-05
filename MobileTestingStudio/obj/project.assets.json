@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevGit\\MobileTestingStudio\\MobileTestingStudio\\MobileTestingStudio.csproj",
+      "projectUniqueName": "C:\\DevGit\\Akademie\\MobileTestingStudio\\MobileTestingStudio\\MobileTestingStudio.csproj",
       "projectName": "MobileTestingStudio",
-      "projectPath": "C:\\DevGit\\MobileTestingStudio\\MobileTestingStudio\\MobileTestingStudio.csproj",
+      "projectPath": "C:\\DevGit\\Akademie\\MobileTestingStudio\\MobileTestingStudio\\MobileTestingStudio.csproj",
       "packagesPath": "C:\\Users\\jhosek\\.nuget\\packages\\",
-      "outputPath": "C:\\DevGit\\MobileTestingStudio\\MobileTestingStudio\\obj\\",
+      "outputPath": "C:\\DevGit\\Akademie\\MobileTestingStudio\\MobileTestingStudio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

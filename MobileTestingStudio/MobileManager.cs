@@ -13,20 +13,12 @@ namespace MobileTestingStudio
         public MobileManager()
         {
             _mobileRepository = new MobileRepository();
-            CreateMobile(MobileSystem.Android, "Androidik", "10.1");
-            CreateMobile(MobileSystem.iOS, "Jabko", "13.1");
-            CreateMobile(MobileSystem.Windows, "Okno", "1.3");
-            CreateMobile(MobileSystem.Android, "Droid", "10.5");
-            CreateMobile(MobileSystem.Windows, "Vokno", "1.01");
-            _mobileRepository.Store();
         }
 
         public IMobile CreateMobile(MobileSystem system, string name, string version)
         {
-            var mobile = new Mobile(system, version, name);
-            _mobileRepository.Add(mobile);
-
-            return mobile;
+            var mobile = new Mobile(system, name, version);
+            return _mobileRepository.Add(mobile);
         }
 
         public void DeleteMobile(Guid id)
@@ -35,6 +27,9 @@ namespace MobileTestingStudio
             if (mobile.IsAvailable)
             {
                 _mobileRepository.Remove(mobile);
+            }
+            else{
+                throw new Exception("Can't delete mobile that is not available.");
             }
         }
 
@@ -46,6 +41,10 @@ namespace MobileTestingStudio
                 mobile.IsAvailable = true;
                 _mobileRepository.Update(mobile);
             }
+            else
+            {
+                throw new Exception("Can't connect mobile that is alread connected");
+            }
         }
         public void DisconnectMobile(Guid id)
         {
@@ -55,8 +54,6 @@ namespace MobileTestingStudio
                 mobile.IsAvailable = false;
                 _mobileRepository.Update(mobile);
             }
-
-            _mobileRepository.Store();
         }
 
         public IEnumerable<IMobile> GetAllMobilesByName(string name)
@@ -92,11 +89,6 @@ namespace MobileTestingStudio
         public void StoreMobiles()
         {
             _mobileRepository.Store();
-        }
-
-        public IEnumerable<IMobile> LoadAllMobiles()
-        {
-            return _mobileRepository.LoadDataFromStore();
         }
     }
 }

@@ -11,3 +11,16 @@ C:\DevGit\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\Newton
 C:\DevGit\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.csproj.CopyComplete
 C:\DevGit\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.dll
 C:\DevGit\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.pdb
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.exe
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.deps.json
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.runtimeconfig.json
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.runtimeconfig.dev.json
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.dll
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\MobileTestingStudio.pdb
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.csprojAssemblyReference.cache
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.AssemblyInfoInputs.cache
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.AssemblyInfo.cs
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.csproj.CopyComplete
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.dll
+C:\DevGit\Akademie\MobileTestingStudio\MobileTestingStudio\obj\Debug\netcoreapp3.0\MobileTestingStudio.pdb

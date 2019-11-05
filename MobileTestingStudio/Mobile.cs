@@ -1,5 +1,6 @@
 ﻿using MobileTestingStudio.Enums;
 using MobileTestingStudio.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +11,7 @@ namespace MobileTestingStudio
     {
         public MobileSystem System { get; }
 
+        [JsonProperty("Guid")]
         public Guid Id { get; }
 
         public string Name { get; }
@@ -18,7 +20,16 @@ namespace MobileTestingStudio
 
         public bool IsAvailable { get; set; }
 
-        public Mobile(MobileSystem system, string version, string name)
+        [JsonConstructor]
+        public Mobile(MobileSystem system, string name, string version, Guid id, bool isAvailable)
+        {
+            this.Id = id;
+            this.IsAvailable = isAvailable;
+            this.Name = name;
+            this.Version = version;
+            this.System = system;
+        }
+        public Mobile(MobileSystem system, string name, string version)
         {
             Id = Guid.NewGuid();
             System = system;

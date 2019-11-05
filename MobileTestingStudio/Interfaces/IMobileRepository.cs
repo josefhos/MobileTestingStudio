@@ -16,6 +16,6 @@ namespace MobileTestingStudio.Interfaces
         IEnumerable<IMobile> GetByAvailability(bool isAvailable);
         IEnumerable<IMobile> GetBySystem(MobileSystem system);
         void Store();
-        IEnumerable<IMobile> LoadDataFromStore();
+        void LoadDataFromStore();
     }
 }

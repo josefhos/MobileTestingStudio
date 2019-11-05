@@ -14,13 +14,16 @@ namespace MobileTestingStudio
         private List<IMobile> _repository;
         private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
-            TypeNameHandling = TypeNameHandling.Auto
+            TypeNameHandling = TypeNameHandling.Objects,
+            Formatting = Formatting.Indented,
+            PreserveReferencesHandling = PreserveReferencesHandling.Objects
         };
         const string storeFileName = "Repository.json";
 
         public MobileRepository()
         {
             _repository = new List<IMobile>();
+            LoadDataFromStore();
         }
         public IMobile Add(IMobile mobile)
         {
@@ -54,8 +57,7 @@ namespace MobileTestingStudio
         }
         public void Remove(IMobile mobile)
         {
-            _repository.RemoveAll(mobile => mobile.Id == mobile.Id);
-            Store();
+            _repository.RemoveAll(mob => mob.Id == mobile.Id);
         }
 
         public IMobile Update(IMobile mobile)
@@ -76,11 +78,18 @@ namespace MobileTestingStudio
             File.WriteAllText(storeFileName, JsonConvert.SerializeObject(_repository, _settings));
         }
 
-        public IEnumerable<IMobile> LoadDataFromStore()
+        public void LoadDataFromStore()
         {
-            var storedData = File.ReadAllText(storeFileName);
+            if (File.Exists(storeFileName))
+            {
+                var storedData = File.ReadAllText(storeFileName);
 
-            return JsonConvert.DeserializeObject<IEnumerable<IMobile>>(storedData, _settings);
+                _repository = storedData == null || !storedData.Any()
+                ? new List<IMobile>()
+                : JsonConvert.DeserializeObject<List<IMobile>>(storedData, _settings);
+            }
+
+            
         }
     }
 }
