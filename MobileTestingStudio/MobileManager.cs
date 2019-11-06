@@ -18,7 +18,9 @@ namespace MobileTestingStudio
         public IMobile CreateMobile(MobileSystem system, string name, string version)
         {
             var mobile = new Mobile(system, name, version);
-            return _mobileRepository.Add(mobile);
+            var response = _mobileRepository.Add(mobile);
+            StoreMobiles();
+            return response;
         }
 
         public void DeleteMobile(Guid id)
@@ -27,9 +29,7 @@ namespace MobileTestingStudio
             if (mobile.IsAvailable)
             {
                 _mobileRepository.Remove(mobile);
-            }
-            else{
-                throw new Exception("Can't delete mobile that is not available.");
+                StoreMobiles();
             }
         }
 
@@ -40,10 +40,7 @@ namespace MobileTestingStudio
             {
                 mobile.IsAvailable = true;
                 _mobileRepository.Update(mobile);
-            }
-            else
-            {
-                throw new Exception("Can't connect mobile that is alread connected");
+                StoreMobiles();
             }
         }
         public void DisconnectMobile(Guid id)
@@ -53,6 +50,7 @@ namespace MobileTestingStudio
             {
                 mobile.IsAvailable = false;
                 _mobileRepository.Update(mobile);
+                StoreMobiles();
             }
         }
 

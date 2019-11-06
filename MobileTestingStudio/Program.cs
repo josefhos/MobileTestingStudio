@@ -15,35 +15,34 @@ namespace MobileTestingStudio
 
             // AddDummyMobiles(mobileManager);
 
+            //list android mobiles
             Console.WriteLine("Getting mobiles by OS = Android...");
             var androidMobiles = mobileManager.GetAllMobilesBySystem(MobileSystem.Android);
             ShowInConsole(androidMobiles);
 
+            //delete first android mobile
+            Console.WriteLine("Deleting first Android mobile from the list.");
+            mobileManager.DeleteMobile(androidMobiles.First().Id);
+            var androidMobilesAfterDelete = mobileManager.GetAllMobilesBySystem(MobileSystem.Android);
+            Console.WriteLine("Updated list of Android mobiles.");
+            ShowInConsole(androidMobilesAfterDelete);
+
+            //show available mobiles
             Console.WriteLine("Getting mobiles that are available...");
             var availableMobiles = mobileManager.GetConnectedMobiles();
             ShowInConsole(availableMobiles);
 
-            //delete
-            // Console.WriteLine("Deleting first Android mobile from the list.");
-            // mobileManager.DeleteMobile(androidMobiles.First().Id);
-            // mobileManager.StoreMobiles();
-            // var androidMobilesAfterDelete = mobileManager.GetAllMobilesBySystem(MobileSystem.Android);
-            // Console.WriteLine("Updated list of Android mobiles.");
-            // ShowInConsole(androidMobilesAfterDelete);
-
-            //disconnect
+            //show and disconnect name=vokno mobile
             var voknoMobileConnected = mobileManager.GetAllMobilesByName("vokno").First();
-            Console.WriteLine($"Disconnecting mobile name Vokno\r\nId: {voknoMobileConnected.Id}; Name: {voknoMobileConnected.Name}; isAvailable: {voknoMobileConnected.IsAvailable}");
+            Console.WriteLine($"State for mobile Vokno\r\nId: {voknoMobileConnected.Id}; Name: {voknoMobileConnected.Name}; isAvailable: {voknoMobileConnected.IsAvailable}");
             mobileManager.DisconnectMobile(voknoMobileConnected.Id);
-            mobileManager.StoreMobiles();
             var voknoMobileDisconnected = mobileManager.GetAllMobilesByName("vokno").First();
-            Console.WriteLine($"State for mobile Vokno\r\nId: {voknoMobileDisconnected.Id}; Name: {voknoMobileDisconnected.Name}; isAvailable: {voknoMobileDisconnected.IsAvailable}");
+            Console.WriteLine($"State for mobile Vokno after disconnect\r\nId: {voknoMobileDisconnected.Id}; Name: {voknoMobileDisconnected.Name}; isAvailable: {voknoMobileDisconnected.IsAvailable}");
 
-            //connect back
+            //show and connect back name=vokno mobile
             mobileManager.ConnectMobile(voknoMobileDisconnected.Id);
-            mobileManager.StoreMobiles();
             var voknoMobileConnectedBack = mobileManager.GetAllMobilesByName("vokno").First();
-            Console.WriteLine($"State for mobile Vokno\r\nId: {voknoMobileConnectedBack.Id}; Name: {voknoMobileConnectedBack.Name}; isAvailable: {voknoMobileConnectedBack.IsAvailable}");
+            Console.WriteLine($"State for mobile Vokno after connect back\r\nId: {voknoMobileConnectedBack.Id}; Name: {voknoMobileConnectedBack.Name}; isAvailable: {voknoMobileConnectedBack.IsAvailable}");
         }
 
         private static void ShowInConsole(IEnumerable<IMobile> mobiles)
@@ -65,8 +64,6 @@ namespace MobileTestingStudio
                 mobileManager.CreateMobile(MobileSystem.Android, "Ufoun", "1.0");
                 mobileManager.CreateMobile(MobileSystem.Windows, "Vokno", "0.1");
                 mobileManager.CreateMobile(MobileSystem.Android, "Droid", "1.1");
-                mobileManager.StoreMobiles();
-                // return mobileManager.LoadAllMobiles();
         }
     }
 }

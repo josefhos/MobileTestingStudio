@@ -2,15 +2,6 @@
   {
     "$id": "1",
     "$type": "MobileTestingStudio.Mobile, MobileTestingStudio",
-    "System": 0,
-    "Guid": "32087d4a-b853-4baf-b82e-282610ae0288",
-    "Name": "Androidik",
-    "Version": "1.0",
-    "IsAvailable": true
-  },
-  {
-    "$id": "2",
-    "$type": "MobileTestingStudio.Mobile, MobileTestingStudio",
     "System": 1,
     "Guid": "c628f677-209e-424c-abc7-705fc5ec2c9e",
     "Name": "Jablko",
@@ -18,7 +9,7 @@
     "IsAvailable": true
   },
   {
-    "$id": "3",
+    "$id": "2",
     "$type": "MobileTestingStudio.Mobile, MobileTestingStudio",
     "System": 0,
     "Guid": "17d024cd-0571-468e-8614-28f9aea0f3c2",
@@ -27,7 +18,7 @@
     "IsAvailable": true
   },
   {
-    "$id": "4",
+    "$id": "3",
     "$type": "MobileTestingStudio.Mobile, MobileTestingStudio",
     "System": 2,
     "Guid": "8ac46429-ac72-4589-a21f-259e15ccca57",
@@ -36,7 +27,7 @@
     "IsAvailable": true
   },
   {
-    "$id": "5",
+    "$id": "4",
     "$type": "MobileTestingStudio.Mobile, MobileTestingStudio",
     "System": 0,
     "Guid": "525a9d94-0c84-40ad-b86b-78757625842c",
